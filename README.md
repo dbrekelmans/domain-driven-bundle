@@ -59,11 +59,8 @@ Service configuration files are automatically loaded from `domain_driven.directo
 #### Routing
 Routing configuration files are automatically loaded from `domain_driven.directories.context`/*/`domain_driven.directories.infrastructure`/`domain_driven.directories.config`/`domain_driven.files.routes`.`{yaml,yml,xml,php}`.
 
-Annotations are not yet supported, but it's on the roadmap.
-
 ## Roadmap
 ### Additional bundles support
-* `symfony/framework-bundle` (Route annotations)
 * `symfony/twig-bundle`
 * `doctrine/doctrine-migrations-bundle`
 
