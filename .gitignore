@@ -3,6 +3,7 @@
 ###< intellij/phpstorm ###
 
 ###> composer ###
+/bin/
 /vendor/
 ###< composer ###
 
