@@ -33,7 +33,7 @@ final class ContextRouteLoader extends Loader
             ->files()
             ->name('/^routes\.(ya?ml|xml|php)$/');
 
-        foreach ($routeResources as $routeResource) {
+        foreach ($routeResources->getIterator() as $routeResource) {
             $routeCollection->addCollection(
                 $this->import($routeResource->getRealPath(), $routeResource->getExtension())
             );
