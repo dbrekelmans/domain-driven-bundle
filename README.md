@@ -34,7 +34,22 @@ framework:
 ```
 
 ### Configuration
-This bundle works out of the works with the directory structure as detailed above, but you can configure 
+This bundle works out of the box with the directory structure as detailed above. You can configure the directory names and locations in your symfony application in `config/packages/domain_driven.yaml`.
+
+The default configuration is as follows:
+```yaml
+domain_driven:
+    directories:
+        context: '%kernel.project_dir%/src'
+        application: 'Application'
+        domain: 'Domain'
+        infrastructure: 'Infrastructure'
+        presentation: 'Presentation'
+        config: 'config'
+    files:
+        routes: 'routes'
+        services: 'services'
+```
 
 ## Supported bundles
 ### symfony/framework-bundle
