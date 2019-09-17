@@ -1,0 +1,43 @@
+{
+    "name": "dbrekelmans/domain-driven-bundle",
+    "description": "Domain driven directory structure configuration for Symfony.",
+    "authors": [
+        {
+            "name": "Daniël Brekelmans",
+            "homepage": "https://github.com/dbrekelmans"
+        }
+    ],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/dbrekelmans/domain-driven-bundle/issues"
+    },
+    "type": "symfony-bundle",
+    "require": {
+        "php": "^7.1",
+        "symfony/config": "^4.3",
+        "symfony/dependency-injection": "^4.3",
+        "symfony/finder": "^4.3",
+        "symfony/http-kernel": "^4.3",
+        "symfony/routing": "^4.3"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true,
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dbrekelmans\\DomainDrivenBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}

@@ -1,0 +1,3 @@
+domain_driven:
+    resource: .
+    type: domain_driven.context

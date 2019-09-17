@@ -1,0 +1,12 @@
+###> intellij/phpstorm ###
+/.idea
+###< intellij/phpstorm ###
+
+###> composer ###
+/vendor/
+###< composer ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###

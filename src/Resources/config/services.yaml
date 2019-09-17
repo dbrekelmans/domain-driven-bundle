@@ -1,0 +1,7 @@
+services:
+#    DomainDrivenBundle\Routing\ContextRouteLoader:
+    Framework\DomainDrivenBundle\Routing\ContextRouteLoader:
+        arguments:
+            $contextDir: '%domain_driven.context_dir%'
+            $configDir: '%domain_driven.config_dir%'
+        tags: [routing.loader]
