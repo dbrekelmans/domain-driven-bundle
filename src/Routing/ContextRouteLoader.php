@@ -26,18 +26,20 @@ final class ContextRouteLoader extends Loader
 
     public function load($resource, $type = null)
     {
-        $routes = new RouteCollection();
+        $routeCollection = new RouteCollection();
 
-        $routesConfig = (new Finder())
+        $routeResources = (new Finder())
             ->in($this->contextDir . '/*/' . $this->configDir)
             ->files()
             ->name('/^routes\.(ya?ml|xml|php)$/');
 
-        foreach ($routesConfig->getIterator() as $routeConfig) {
-            $this->import($routeConfig);
+        foreach ($routeResources as $routeResource) {
+            $routeCollection->addCollection(
+                $this->import($routeResource->getRealPath(), $routeResource->getExtension())
+            );
         }
 
-        return $routes;
+        return $routeCollection;
     }
 
     public function supports($resource, $type = null)
