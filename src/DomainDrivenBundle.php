@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Framework\DomainDrivenBundle;
+namespace DomainDrivenBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Framework\DomainDrivenBundle\DependencyInjection;
+namespace DomainDrivenBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Config\Loader\DelegatingLoader;

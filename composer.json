@@ -30,7 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Dbrekelmans\\DomainDrivenBundle\\": "src/"
+            "DomainDrivenBundle\\": "src/"
         }
     },
     "autoload-dev": {

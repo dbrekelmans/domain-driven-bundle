@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Framework\DomainDrivenBundle\Routing;
+namespace DomainDrivenBundle\Routing;
 
 use Symfony\Component\Config\Loader\Loader;
 use Symfony\Component\Finder\Finder;
