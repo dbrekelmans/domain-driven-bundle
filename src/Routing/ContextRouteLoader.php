@@ -24,6 +24,11 @@ final class ContextRouteLoader extends Loader
         $this->configDir = $configDir;
     }
 
+    /**
+     * @return RouteCollection
+     *
+     * @inheritDoc
+     */
     public function load($resource, $type = null)
     {
         $routeCollection = new RouteCollection();
@@ -42,6 +47,9 @@ final class ContextRouteLoader extends Loader
         return $routeCollection;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function supports($resource, $type = null)
     {
         return $type === self::TYPE;

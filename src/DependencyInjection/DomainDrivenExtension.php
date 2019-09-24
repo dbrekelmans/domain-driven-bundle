@@ -13,16 +13,23 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
+use function sprintf;
 
 final class DomainDrivenExtension extends ConfigurableExtension
 {
     private const PARAMETER_PREFIX = 'domain_driven.';
 
+    /**
+     * @inheritDoc
+     */
     public function getConfiguration(array $config, ContainerBuilder $container)
     {
         return new Configuration($container->getParameter('kernel.project_dir'));
     }
 
+    /**
+     * @inheritDoc
+     */
     protected function loadInternal(array $mergedConfig, ContainerBuilder $container) : void
     {
         $this->setConfigParameters($mergedConfig, $container);
@@ -41,6 +48,9 @@ final class DomainDrivenExtension extends ConfigurableExtension
         $this->loadContextServices($container, $configFiles->name('/^services\.(ya?ml|xml|php)$/'));
     }
 
+    /**
+     * @param mixed[] $config
+     */
     private function setConfigParameters(array $config, ContainerBuilder $container) : void
     {
         foreach ($config as $name => $value) {
