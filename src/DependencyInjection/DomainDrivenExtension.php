@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace DomainDrivenBundle\DependencyInjection;
 
+use RecursiveArrayIterator;
+use RecursiveIteratorIterator;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Config\Loader\DelegatingLoader;
 use Symfony\Component\Config\Loader\LoaderResolver;
@@ -13,12 +15,12 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
+use function implode;
+use function range;
 use function sprintf;
 
 final class DomainDrivenExtension extends ConfigurableExtension
 {
-    private const PARAMETER_PREFIX = 'domain_driven.';
-
     /**
      * @inheritDoc
      */
@@ -38,9 +40,10 @@ final class DomainDrivenExtension extends ConfigurableExtension
         $configFiles = (new Finder())
             ->in(
                 sprintf(
-                    '%s/*/%s',
-                    $container->getParameter(self::PARAMETER_PREFIX . 'context_dir'),
-                    $container->getParameter(self::PARAMETER_PREFIX . 'config_dir')
+                    '%s/*/%s/%s',
+                    $container->getParameter('domain_driven.directories.context'),
+                    $container->getParameter('domain_driven.directories.infrastructure'),
+                    $container->getParameter('domain_driven.directories.config')
                 )
             )
             ->files();
@@ -53,8 +56,15 @@ final class DomainDrivenExtension extends ConfigurableExtension
      */
     private function setConfigParameters(array $config, ContainerBuilder $container) : void
     {
-        foreach ($config as $name => $value) {
-            $container->setParameter(self::PARAMETER_PREFIX . $name, $value);
+        $nodes = new RecursiveIteratorIterator(new RecursiveArrayIterator(['domain_driven' => $config]));
+        foreach ($nodes as $node) {
+            $keys = [];
+
+            foreach (range(0, $nodes->getDepth()) as $depth) {
+                $keys[] = $nodes->getSubIterator($depth)->key();
+            }
+
+            $container->setParameter(implode('.', $keys), $node);
         }
     }
 
