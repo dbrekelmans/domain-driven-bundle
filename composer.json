@@ -14,6 +14,7 @@
     "type": "symfony-bundle",
     "require": {
         "php": "^7.1",
+        "dbrekelmans/coding-standard": "^1.0",
         "symfony/config": "^4.3",
         "symfony/dependency-injection": "^4.3",
         "symfony/finder": "^4.3",
