@@ -18,10 +18,14 @@ final class ContextRouteLoader extends Loader
     /** @var string */
     private $configDir;
 
-    public function __construct(string $contextDir, string $configDir)
+    /** @var string */
+    private $fileName;
+
+    public function __construct(string $contextDir, string $configDir, string $fileName)
     {
         $this->contextDir = $contextDir;
         $this->configDir = $configDir;
+        $this->fileName = $fileName;
     }
 
     /**
@@ -36,7 +40,7 @@ final class ContextRouteLoader extends Loader
         $routeResources = (new Finder())
             ->in($this->contextDir . '/*/' . $this->configDir)
             ->files()
-            ->name('/^routes\.(ya?ml|xml|php)$/');
+            ->name(sprintf('/^%s\.(ya?ml|xml|php)$/', $this->fileName));
 
         foreach ($routeResources->getIterator() as $routeResource) {
             $routeCollection->addCollection(
