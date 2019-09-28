@@ -3,4 +3,5 @@ services:
         arguments:
             $contextDir: '%domain_driven.directories.context%'
             $configDir: '%domain_driven.directories.infrastructure%/%domain_driven.directories.config%'
+            $filename: '%domain_driven.files.routes%'
         tags: [routing.loader]
