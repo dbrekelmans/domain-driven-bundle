@@ -62,6 +62,7 @@ Routing configuration files are automatically loaded from `domain_driven.directo
 ## Roadmap
 ### Additional bundles support
 * `symfony/twig-bundle`
+* `symfony/framework` (`symfony/translation`)
 * `doctrine/doctrine-migrations-bundle`
 
 ### Maker command
