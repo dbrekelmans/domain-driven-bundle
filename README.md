@@ -59,9 +59,12 @@ Service configuration files are automatically loaded from `domain_driven.directo
 #### Routing
 Routing configuration files are automatically loaded from `domain_driven.directories.context`/*/`domain_driven.directories.infrastructure`/`domain_driven.directories.config`/`domain_driven.files.routes`.`{yaml,yml,xml,php}`.
 
+### symfony/twig-bundle
+#### Templates
+Template files are automatically configured in `domain_driven.directories.context`/*/`domain_driven.directories.presentation`/`domain_driven.directories.template`.
+
 ## Roadmap
 ### Additional bundles support
-* `symfony/twig-bundle`
 * `symfony/framework` (`symfony/translation`)
 * `doctrine/doctrine-migrations-bundle`
 
