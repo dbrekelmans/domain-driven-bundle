@@ -1,7 +1,7 @@
 services:
     DomainDrivenBundle\Routing\ContextRouteLoader:
         arguments:
-            - '%domain_driven.directories.context%'
+            - '%kernel.project_dir%/%domain_driven.directories.context%'
             - '%domain_driven.directories.infrastructure%/%domain_driven.directories.config%'
             - '%domain_driven.files.routes%'
         tags: [routing.loader]

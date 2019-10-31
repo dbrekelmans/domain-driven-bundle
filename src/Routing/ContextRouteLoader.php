@@ -7,6 +7,7 @@ namespace DomainDrivenBundle\Routing;
 use Symfony\Component\Config\Loader\Loader;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Routing\RouteCollection;
+use function sprintf;
 
 final class ContextRouteLoader extends Loader
 {

@@ -9,14 +9,6 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 final class Configuration implements ConfigurationInterface
 {
-    /** @var string */
-    private $projectDir;
-
-    public function __construct(string $projectDir)
-    {
-        $this->projectDir = $projectDir;
-    }
-
     /**
      * @inheritDoc
      */
@@ -30,7 +22,7 @@ final class Configuration implements ConfigurationInterface
                 ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('context')
-                            ->defaultValue($this->projectDir . '/src')
+            ->defaultValue('/src')
                         ->end()
                         ->scalarNode('application')
                             ->defaultValue('Application')
@@ -47,6 +39,9 @@ final class Configuration implements ConfigurationInterface
                         ->scalarNode('config')
                             ->defaultValue('config')
                         ->end()
+            ->scalarNode('template')
+            ->defaultValue('template')
+            ->end()
                     ->end()
                 ->end()
                 ->arrayNode('files')

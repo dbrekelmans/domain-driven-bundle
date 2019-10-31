@@ -25,6 +25,10 @@
         "roave/backward-compatibility-check": "^4.0",
         "roave/security-advisories": "dev-master"
     },
+    "suggest": {
+        "symfony/framework-bundle": "Automatically configure services and routes for each domain context.",
+        "symfony/twig-bundle": "Automatically configure a template path per domain context."
+    },
     "config": {
         "sort-packages": true,
         "bin-dir": "bin"
