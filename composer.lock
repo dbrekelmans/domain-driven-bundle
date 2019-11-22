@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e895220b5b9d5e31393f2f9cca6bc47",
+    "content-hash": "419d27b5eeba2aafea9c4789b7bbf5ab",
     "packages": [
         {
             "name": "dbrekelmans/coding-standard",
