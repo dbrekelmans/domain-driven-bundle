@@ -34,7 +34,7 @@ final class ContextRouteLoader extends Loader
      *
      * @inheritDoc
      */
-    public function load($resource, $type = null)
+    public function load($resource, ?string $type = null)
     {
         $routeCollection = new RouteCollection();
 
@@ -55,7 +55,7 @@ final class ContextRouteLoader extends Loader
     /**
      * @inheritDoc
      */
-    public function supports($resource, $type = null)
+    public function supports($resource, ?string $type = null)
     {
         return $type === self::TYPE;
     }
